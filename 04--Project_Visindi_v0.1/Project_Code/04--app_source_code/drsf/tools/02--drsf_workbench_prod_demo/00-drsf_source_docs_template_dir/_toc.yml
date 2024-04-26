@@ -1,0 +1,21 @@
+format: jb-book
+root: intro
+parts:
+- caption: "DRSF Entries"
+  chapters:
+  - file: P2--drsf_entries/C1--drsf_graph/drsf_graph
+  - file: P2--drsf_entries/C2--adverse_events/adverse_events_intro
+  - file: P2--drsf_entries/C3--threats/threats_intro
+  - file: P2--drsf_entries/C4--attacks/attacks_intro
+  - file: P2--drsf_entries/C5--detection_signatures/detection_signatures_intro
+  - file: P2--drsf_entries/C6--mitigating_control_implementations/mitigating_control_implementations_intro
+  - file: P2--drsf_entries/C7--mitigating_controls/mitigating_controls_intro
+- caption: "Response Playbooks"
+  chapters:
+  - file: P3--response_playbooks/response_playbooks_intro
+- caption: "Appendix X: Reference Resources"
+  chapters:
+  - file: P4--reference_resources/reference_resources_intro
+- caption: "Appendix X: Licenses & Works Cited"
+  chapters:
+  - file: P5--licenses_and_citations/licenses_and_citations_intro

@@ -1,0 +1,9 @@
+# Book settings
+title: The Detection & Response Strategic Framework
+author: Ross Blair
+logo: 01-content_files/image_files/DRSF_Project_Logo.png
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force

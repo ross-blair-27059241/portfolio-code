@@ -1,0 +1,36 @@
+#                 COPYRIGHT & LICENSE TERMS NOTICE
+# =============================================================================
+# All following code and content is © 2024 Ross Blair,
+# and falls under the licensing terms of Ross Blair's
+# derivative of the Business Source License \(BSL\).
+# The precise license and warranty terms of the BSL can be found in the file 
+# `LICENSE.BSL.md`, which should have been distributed
+# along with this code file.  All other use of original-work code and content
+# falling outside of this BSL license is prohibited.
+# =============================================================================
+
+#               PYTHON PACKAGE BUILD-SYSTEM FILE
+# -----------------------------------------------------------------------------
+# This file specifies which "data" (i.e. non-code) files should be included in
+# when the application source code of this project (specified in setup.cfg) is
+# built into a Python package.
+# -----------------------------------------------------------------------------
+
+
+# Include the requisite files to ensure a proper build process.
+include pyproject.toml
+include setup.cfg
+
+# Include the source-code-specific README, and any source-code-relevant
+# licensing files, along with any corresponding GPG public key signature files.
+include README.md
+include README.md.sig
+
+# Include all non-code files required for proper execution of the core program.
+# recursive-include src/data *
+# recursive-include src/docs *
+# recursive-include src/tests *
+
+# Include all additional files useful to the end-user of the core program.
+recursive-include tools/01--drsf_workbench_prod *
+recursive-include tools/02--drsf_workbench_prod_demo *

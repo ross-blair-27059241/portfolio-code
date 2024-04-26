@@ -1,0 +1,9 @@
+# Book settings
+title: Project Visindi Documentation
+author: Ross Blair
+logo: 00--content_files/image_files/Project_Visindi_Logo.png
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force

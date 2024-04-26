@@ -1,0 +1,246 @@
+{
+    "adverse_event": {
+        "id_prefix": "AE",
+        "source_doc_template_file": "ae_template.md",
+        "drsf_entry_config": {
+            "foundational_build_fields": {
+                "drsf_id": "",
+                "drsf_title": "",
+                "drsf_entry_type": "adverse_event",
+                "preceeding_attacks": []
+            },
+            "auto_generated_fields": {
+                "associated_drsf_entries": {}
+            }
+        },
+        "drsf_documentation_config": {
+            "drsf_source_docs_section_rel_dir": "P2--drsf_entries/C2--adverse_events",
+            "drsf_toc_config": {
+                "target_caption": "DRSF Entries",
+                "target_chapter": "P2--drsf_entries/C2--adverse_events/adverse_events_intro",
+                "section_dir_prefix": "P2--drsf_entries/C2--adverse_events"
+            },
+            "auto_documented_fields_mappings": {
+                "auto_documented_associated_entry_fields": {
+                    "preceeding_attacks": {
+                        "entry_doc_section": "# Documented Preceeding Attacks",
+                        "database_ref_section": "attacks"
+                    }
+                }
+            }
+        },
+        "drsf_database_config": {
+            "json_database_section": "adverse_events"
+        }
+    },
+    "threat": {
+        "id_prefix": "TH",
+        "source_doc_template_file": "threat_template.md",
+        "drsf_entry_config": {
+            "foundational_build_fields": {
+                "drsf_id": "",
+                "drsf_title": "",
+                "drsf_entry_type": "threat",
+                "preceeding_attacks": []
+            },
+            "auto_generated_fields": {
+                "associated_drsf_entries": {
+                    "proceeding_attacks": []
+                }
+            }
+        },
+        "drsf_documentation_config": {
+            "drsf_source_docs_section_rel_dir": "P2--drsf_entries/C3--threats",
+            "drsf_toc_config": {
+                "target_caption": "DRSF Entries",
+                "target_chapter": "P2--drsf_entries/C3--threats/threats_intro",
+                "section_dir_prefix": "P2--drsf_entries/C3--threats"
+
+            },
+            "auto_documented_fields_mappings": {
+                "auto_documented_associated_entry_fields": {
+                    "proceeding_attacks": {
+                        "entry_doc_section": "# Documented Proceeding Attacks",
+                        "database_ref_section": "attacks"
+                    },
+                    "preceeding_attacks": {
+                        "entry_doc_section": "# Documented Preceeding Attacks",
+                        "database_ref_section": "attacks"
+                    }
+                }
+            }
+        },
+        "drsf_database_config": {
+            "json_database_section": "threats"
+        }
+    },
+    "attack": {
+        "id_prefix": "ATK",
+        "source_doc_template_file": "attack_template.md",
+        "drsf_entry_config": {
+            "foundational_build_fields": {
+                "drsf_id": "",
+                "drsf_title": "",
+                "drsf_entry_type": "attack",
+                "preceeding_threats": [],
+                "associated_detection_signatures": [],
+                "associated_mitigating_control_implementations": []
+            },
+            "auto_generated_fields": {
+                "associated_drsf_entries": {
+                    "proceeding_threats": [],
+                    "proceeding_adverse_events": []
+                }
+            }
+        },
+        "drsf_documentation_config": {
+            "drsf_source_docs_section_rel_dir": "P2--drsf_entries/C4--attacks",
+            "drsf_toc_config": {
+                "target_caption": "DRSF Entries",
+                "target_chapter": "P2--drsf_entries/C4--attacks/attacks_intro",
+                "section_dir_prefix": "P2--drsf_entries/C4--attacks"
+            },
+            "auto_documented_fields_mappings": {
+                "auto_documented_associated_entry_fields": {
+                    "preceeding_threats": {
+                        "entry_doc_section": "# Documented Preceeding Threats",
+                        "database_ref_section": "threats"
+                    },
+                    "associated_detection_signatures": {
+                        "entry_doc_section": "# Associated Detection Signatures",
+                        "database_ref_section": "detection_signatures"
+                    },
+                    "associated_mitigating_control_implementations": {
+                        "entry_doc_section": "# Associated Mitigating Control Implementations",
+                        "database_ref_section": "mitigating_control_implementations"
+                    },
+                    "proceeding_threats": {
+                        "entry_doc_section": "# Documented Proceeding Threats",
+                        "database_ref_section": "threats"
+                    },
+                    "proceeding_adverse_events": {
+                        "entry_doc_section": "# Documented Proceeding Adverse Events",
+                        "database_ref_section": "adverse_events"
+                    }
+                }
+            }
+        },
+        "drsf_database_config": {
+            "json_database_section": "attacks"
+        }
+
+    },
+    "detection_signature": {
+        "id_prefix": "DS",
+        "source_doc_template_file": "det_sig_template.md",
+        "drsf_entry_config": {
+            "foundational_build_fields": {
+                "drsf_id": "",
+                "drsf_title": "",
+                "drsf_entry_type": "detection_signature",
+                "status": ""
+            },
+            "auto_generated_fields": {
+                "associated_drsf_entries": {
+                    "associated_attacks": []
+                }
+            }
+        },
+        "drsf_documentation_config": {
+            "drsf_source_docs_section_rel_dir": "P2--drsf_entries/C5--detection_signatures",
+            "drsf_toc_config": {
+                "target_caption": "DRSF Entries",
+                "target_chapter": "P2--drsf_entries/C5--detection_signatures/detection_signatures_intro",
+                "section_dir_prefix": "P2--drsf_entries/C5--detection_signatures"
+
+            },
+            "auto_documented_fields_mappings": {
+                "auto_documented_associated_entry_fields": {
+                    "associated_attacks": {
+                        "entry_doc_section": "# Associated Attacks",
+                        "database_ref_section": "attacks"
+                    }
+                }
+            }
+        },
+        "drsf_database_config": {
+            "json_database_section": "detection_signatures"
+        }
+    },
+    "mitigating_control_implementation": {
+        "id_prefix": "MCI",
+        "source_doc_template_file": "mit_ctrl_imp_template.md",
+        "drsf_entry_config": {
+            "foundational_build_fields": {
+                "drsf_id": "",
+                "drsf_title": "",
+                "drsf_entry_type": "mitigating_control_implementation",
+                "status": "",
+                "associated_mitigating_control": ""
+            },
+            "auto_generated_fields": {
+                "associated_drsf_entries": {
+                    "associated_attacks": []
+                }
+            }
+        },
+        "drsf_documentation_config": {
+            "drsf_source_docs_section_rel_dir": "P2--drsf_entries/C6--mitigating_control_implementations",
+            "drsf_toc_config": {
+                "target_caption": "DRSF Entries",
+                "target_chapter": "P2--drsf_entries/C6--mitigation_control_implementations/mitigating_control_implementations_intro",
+                "section_dir_prefix": "P2--drsf_entries/C6--mitigation_control_implementations"
+            },
+            "auto_documented_fields_mappings": {
+                "auto_documented_associated_entry_fields": {
+                    "associated_mitigating_control": {
+                        "entry_doc_section": "# Associated Mitigating Control",
+                        "database_ref_section": "mitigating_controls"
+                    },
+                    "associated_attacks": {
+                        "entry_doc_section": "# Associated Attacks",
+                        "database_ref_section": "attacks"
+                    }
+                }
+            }
+        },
+        "drsf_database_config": {
+            "json_database_section": "mitigating_control_implementations"
+        }
+    },
+    "mitigating_control": {
+        "id_prefix": "MC",
+        "source_doc_template_file": "mit_ctrl_template.md",
+        "drsf_entry_config": {
+            "foundational_build_fields": {
+                "drsf_id": "",
+                "drsf_title": "",
+                "drsf_entry_type": "mitigating_control"
+            },
+            "auto_generated_fields": {
+                "associated_drsf_entries": {
+                    "associated_mitigating_control_implementations": []
+                }
+            }
+        },
+        "drsf_documentation_config": {
+            "drsf_source_docs_section_rel_dir": "P2--drsf_entries/C7--mitigating_controls",
+            "drsf_toc_config": {
+                "target_caption": "DRSF Entries",
+                "target_chapter": "P2--drsf_entries/C7--mitigating_controls/mitigating_controls_intro",
+                "section_dir_prefix": "P2--drsf_entries/C7--mitigating_controls"
+            },
+            "auto_documented_fields_mappings": {
+                "auto_documented_associated_entry_fields": {
+                    "associated_mitigating_control_implementations": {
+                        "entry_doc_section": "# Associated Mitigating Control Implementations",
+                        "database_ref_section": "mitigating_control_implementations"
+                    }
+                }
+            }
+        },
+        "drsf_database_config": {
+            "json_database_section": "mitigating_controls"
+        }
+    }
+}
