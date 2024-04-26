@@ -1,0 +1,5 @@
+{
+	"base_api_url": "https://10.10.10.10:9200",
+	"username": "XXXX@XXXX.com",
+	"password": "XXXX"
+}

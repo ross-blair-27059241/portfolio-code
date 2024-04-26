@@ -1,0 +1,73 @@
+{
+	"hunt_metadata": {
+		"hunt_name": "Log4J Exploit Callback Hunt",
+		"hunt_id": "001"
+	},
+	"searches": {
+		"Log4J Attacks Against Web Application Servers": {
+			"search_description": "To query for malicious URLs and/or URL agent strings indicative of a Log4J Shell exploit attempt against our web application servers.  To retrieve an IOC list of attacker IPs and/or domains which either sent that malicious traffic, or were callback destinations in the event of a successful exploit.  Finally, generate two consolidated csv files of all IOC IPs and IOC domains retrieved from this search's API query as well as external third party sources.",
+			"search_type": "targeted_search",
+			"selector_type": "query_syntax",
+			"selector_pre-processors": [],
+			"custom_api_query_template_files": [
+				"Elasticsearch_API_Query_Templates/Targeted_Selector_Searches/007-Log4J_Exploit_Attempts_On_Web_Servers.json"
+			],
+			"time_range_parameters": {
+				"relative_range": "",
+				"after": "2021-12-09T00:00:00.000Z",
+				"before": "2021-12-26T00:00:00.000Z"
+			},
+			"search_results_post-processors": [
+				{
+					"name": "Generate Separate Log4J IOC IPs and Domains Files",
+					"target_queries_ids": ["007"],
+					"processor_module": "log4j_hunt_postprocessor_functions",
+					"processor_function": "generate_output_log4j_ioc_csv_files",
+					"custom_parameters": ""
+				}
+			]
+		},
+		"Log4J Exploit Callbacks Based on IOC IPs": {
+			"search_description": "Based off a list of IOC IPs created by the previous search `Log4J Attacks Against Web Application Servers`, perform a broad search across multiple log sources for insights on whether any of these attempted compromises may have been sucessful or not.",
+			"search_type": "bulk_ioc_search",
+			"selector_type": "ip",
+			"selector_pre-processors": [
+				{
+					"name": "Ingest Full Log4J IOC IPs",
+					"processor_module": "log4j_hunt_preprocessor_functions",
+					"processor_function": "process_input_log4j_ioc_ip_csv",
+					"custom_parameters": {
+						"input_file": "Log4J-Hunt_Search_Results_IOC_IPs.csv"
+					}
+				}
+			],
+			"time_range_parameters": {
+				"relative_range": "",
+				"after": "2021-12-09T00:00:00.000Z",
+				"before": "2021-12-26T00:00:00.000Z"
+			},
+			"search_results_post-processors": []
+		},
+		"Log4J Exploit Callbacks Based on IOC Domainss": {
+			"search_description": "Based off a list of IOC domains created by the previous search `Log4J Attacks Against Web Application Servers`, perform a broad search across multiple log sources for insights on whether any of these attempted compromises may have resulted in successful compromise and callback to CnC attacker infrastructure.",
+			"search_type": "bulk_ioc_search",
+			"selector_type": "domain_name",
+			"selector_pre-processors": [
+				{
+					"name": "Ingest Full Log4J IOC Domains",
+					"processor_module": "log4j_hunt_preprocessor_functions",
+					"processor_function": "process_input_log4j_ioc_domain_csv",
+					"custom_parameters": {
+						"input_file": "Log4J-Hunt_Search_Results_IOC_Domains.csv"
+					}
+				}
+			],
+			"time_range_parameters": {
+				"relative_range": "",
+				"after": "2021-12-09T00:00:00.000Z",
+				"before": "2021-12-26T00:00:00.000Z"
+			},
+			"search_results_post-processors": []
+		}
+	}
+}

@@ -1,0 +1,51 @@
+{
+	"api_query_meta_data": {
+		"query_name": "Example-EDR Observed Outbound Connections",
+		"query_id": "002",
+		"api_query_description": "This API query is designed to ennumerate all attempted or successful outbound connections to one or more selector IP addresses.  Our queried security toolsets are the following: Example-EDR",
+		"search_type": "bulk_ioc_search",
+		"selector_type": "ip",
+		"information_sources": "Example-EDR",
+		"api_platform": "elasticsearch"
+	},
+	"api_query_required_parameters": {
+		"index": "*-endpoint-*",
+		"target_selector": "destination.ip",
+		"target_selector_query_type": "match",
+		"results_batching_size": "10000",
+		"point-in-time_keep_alive": "10m"
+	},
+	"api_query_syntax_skeleton": {
+		"size": "",
+		"sort": [
+			{
+				"@timestamp": "asc"
+			}
+		],
+		"pit": {
+			"id": "",
+			"keep_alive": ""
+		},
+		"track_total_hits": true,
+		"query": {
+			"filter": [],
+			"should": [],
+			"minimum_should_match": 1,
+			"must": [
+				{"term": {"observer.product": "Example_EDR"}},
+				{"term": {"network.direction": "Outbound"}}
+			]
+		},
+		"fields": [
+			"@timestamp",
+			"observer.product",
+			"host.name",
+			"process.name",
+			"source.ip",
+			"destination.ip",
+			"destination.port",
+			"_id"
+		],
+		"_source": false
+	}
+}

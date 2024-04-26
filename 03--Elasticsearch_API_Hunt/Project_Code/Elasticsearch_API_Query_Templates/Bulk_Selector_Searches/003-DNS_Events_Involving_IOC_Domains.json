@@ -1,0 +1,47 @@
+{
+	"api_query_meta_data": {
+		"query_name": "ExampleDNS Events Involving IOC Domains",
+		"query_id": "003",
+		"api_query_description": "This API query is designed to ennumerate all attempted or successful resolutions of one or more selector IOC domains.  Our queried security toolsets are the following: ExampleDNS.",
+		"search_type": "bulk_ioc_search",
+		"selector_type": "domain_name",
+		"information_sources": "ExampleDNS",
+		"api_platform": "elasticsearch"
+	},
+	"api_query_required_parameters": {
+		"index": "*-network-*",
+		"target_selector": "global_domain.keyword",
+		"target_selector_query_type": "wildcard",
+		"results_batching_size": "10000",
+		"point-in-time_keep_alive": "10m"
+	},
+	"api_query_syntax_skeleton": {
+		"size": "",
+		"sort": [
+			{
+				"@timestamp": "asc"
+			}
+		],
+		"pit": {
+			"id": "",
+			"keep_alive": ""
+		},
+		"track_total_hits": true,
+		"query": {
+			"filter": [],
+			"should": [],
+			"minimum_should_match": 1,
+			"must": [
+				{"term": {"observer.product": "example_dns"}}
+			]
+		},
+		"fields": [
+			"@timestamp",
+			"global_domain",
+			"event.action",
+			"exampledns_agent.identity",
+			"_id"
+		],
+		"_source": false
+	}
+}
