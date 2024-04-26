@@ -1,0 +1,3 @@
+# About this Code
+
+This Python script was created as part of an investigation where I had to get a complete analytical overview of the parameters passed to a certain executable program \(called `example_cmd.exe` in this code\).  The standard CarbonBlack search UI would not meet our team's needs, so I retrieved the full detection event details from the CarbonBlack API with this script.  String pattern analysis was then performed on the command line parameters field for each detection event retrieved from the API.  This string pattern analysis was completed by a separate python script.  Unfortunately this pattern analysis script cannot be elaborated on here since it's programming was highly specific to the details of an incident investigation.

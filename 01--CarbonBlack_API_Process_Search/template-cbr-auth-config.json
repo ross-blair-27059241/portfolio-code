@@ -1,0 +1,6 @@
+{
+	"base_api_url": "https://XXXX.carbonblack.io",
+	"headers": {
+		"X-Auth-Token": "XXXXXX"
+	}
+}
